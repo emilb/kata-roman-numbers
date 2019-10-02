@@ -1,4 +1,4 @@
-# A Kata for solving converting integers to Roman numerals
+# A Kata for converting integers to Roman numerals
 
 ## Pre'reqs
 
@@ -7,8 +7,8 @@
 ## Running
 
 ```bash
->npm install
->node index.js 23 03 1763
+> npm install
+> node index.js 23 03 1763
 23 : XXIII
 03 : III
 1763 : MDCCLXIII
