@@ -5,10 +5,10 @@
   "description": "A converter from 10-based numbers to Roman numbers",
   "license": "MIT",
   "scripts": {
-    "start": "node index.js",
     "lint": "eslint ./",
     "test": "jest",
-    "watch": "jest --watchAll"
+    "watch": "jest --watchAll",
+    "mutate": "npx stryker run"
   },
   "devDependencies": {
     "@stryker-mutator/core": "^2.1.0",
