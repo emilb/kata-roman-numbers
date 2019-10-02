@@ -24,10 +24,11 @@ exports.convertToRoman = function convertToRoman(num) {
   let romanResult = '';
 
   Object.keys(romanNumerals).forEach((key) => {
-    const factor = Math.floor(decimal / romanNumerals[key]);
+    const value = romanNumerals[key];
+    const factor = Math.floor(decimal / value);
 
     romanResult += key.repeat(factor);
-    decimal -= factor * romanNumerals[key];
+    decimal -= factor * value;
   });
 
   return romanResult;
