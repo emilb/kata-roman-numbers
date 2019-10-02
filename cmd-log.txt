@@ -1,0 +1,37 @@
+
+touch package.json
+edit package.json:
+{
+  "name": "roman",
+  "version": "1.0.0",
+  "author": "Emil Breding",
+  "description": "A converter from 10-based numbers to Roman numbers",
+  "license": "MIT",
+  "scripts": {
+    "start": "node index.js",
+    "lint": "eslint ./",
+    "test": "jest",
+    "watch": "jest --watchAll"
+  }
+}
+
+npm install --save-dev eslint
+npm run lint -- --init
+.eslintrc.js add: rules-> "no-console": "off"
+                  env-> jest: true
+
+npm install --save-dev jest
+
+mkdir -p test src
+touch index.js
+touch src/roman.js
+touch test/roman.unit.test.js
+
+touch .gitignore
+.gitignore add: node_modules, .DS_Store, .vscode
+
+Mutation testing
+npm install --save-dev @stryker-mutator/core
+git init
+npx stryker init
+npx stryker run
