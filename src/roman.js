@@ -14,13 +14,15 @@ const romanNumerals = {
   I: 1,
 };
 
-exports.convertToRoman = function convertToRoman(num) {
-  let decimal = parseFloat(num, 10);
+// eslint-disable-next-line import/prefer-default-export
+module.exports.convertToRoman = function convertToRoman(num) {
+  const decimal = parseFloat(num, 10);
 
   if (!Number.isInteger(decimal) || decimal < 1) {
     throw new TypeError(`'${num}' is not a number`);
   }
 
+  /*
   let romanResult = '';
 
   Object.keys(romanNumerals).forEach((key) => {
@@ -30,6 +32,21 @@ exports.convertToRoman = function convertToRoman(num) {
     romanResult += key.repeat(factor);
     decimal -= factor * value;
   });
-
   return romanResult;
+  */
+
+  const result = Object.entries(romanNumerals).reduce(
+    (acc, [romanKey, romanValue]) => {
+      const factor = Math.floor(acc.decimalRest / romanValue);
+      acc.romanResult += romanKey.repeat(factor);
+      acc.decimalRest -= factor * romanValue;
+      return acc;
+    },
+    {
+      romanResult: '',
+      decimalRest: decimal,
+    },
+  );
+
+  return result.romanResult;
 };

@@ -28,6 +28,6 @@ test('should handle shorthand', () => {
   expect(roman.convertToRoman(94)).toBe('XCIV');
 });
 
-test('should convert values to integer if possible', () => {
+test('should convert input values to integer if possible', () => {
   expect(roman.convertToRoman('9')).toBe('IX');
 });
